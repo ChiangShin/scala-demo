@@ -1,5 +1,8 @@
 package com.chiangshin
 
+import java.util.Date
+import Array._
+
 object HelloWorld {
 
   def forTest1() = {
@@ -39,7 +42,7 @@ object HelloWorld {
   }
 
   def m(x:Int)  = {x + 2}
-  var fd = (x:Int) =>{}
+
 
   /**
     * 可变参数
@@ -90,12 +93,76 @@ object HelloWorld {
   // 函数 f 和 值 v 作为参数，而函数 f 又调用了参数 v
   def apply(f: Int => String, v: Int) = f(v)
 
-  def layout[sA](x: sA) = "[" + x.toString() + "]"
+  def layout[sA](x: sA):String = "[" + x.toString() + "]"
 
-  def main(args: Array[String]): Unit = {
-    fun4(7)
-    fun4(7,3)
+  def func4(a:Int,b:Int) = {
+    if(a == 1){
+       a +b
+    }else{
+       "-----"
+    }
   }
 
+  var inc = (x:Int) => x+1
+
+  def func5(a:Int) = {
+    def subFunc1() = "aaaaaaa"
+    def subFunc2() = "bbbbbbb"
+  }
+
+  /**
+    * 偏函数
+    */
+  def log(data:Date,msg:String) = {
+    println(data + "--------- " + msg)
+  }
+  var  logXXX = log(new Date,_:String)
+  def runLog()={
+    val date = new Date()
+    val logWith = log(date,_:String)
+
+    log(date,"ddddd")
+    logWith("jjjjjjjjjjj")
+  }
+
+  /**
+    * 柯里化
+    */
+  def add1(a:Int,b:Int) = a + b
+  def add2(a:Int)(b:Int) = a+b
+  def runAdd2(): Unit ={
+    val res = add2(8)(_)
+    val res2 = res(2)
+    print(res2)
+  }
+  var myMatrix = ofDim[Int](3,3)
+
+  def listTest(): Unit ={
+    val list1 = List(2,4,234,3)
+    println("list1" + list1)
+    var list1_1 = list1.::(3)
+    println("list1_1" + list1_1)
+
+
+    val list2 = 2 :: (4 :: Nil)
+    val list3 = 54 :: (89 :: Nil)
+    println("list2" + list2)
+    println("list3" + list3)
+
+    val list4 = list2 ::: list3
+    val list5 = list3.:::(list3)
+    println("list4" + list4)
+    println("list5" + list5)
+
+
+
+
+  }
+
+
+  def main(args: Array[String]): Unit = {
+    listTest()
+
+  }
 
 }
