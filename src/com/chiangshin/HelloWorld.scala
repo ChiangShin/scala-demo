@@ -137,31 +137,9 @@ object HelloWorld {
   }
   var myMatrix = ofDim[Int](3,3)
 
-  def listTest(): Unit ={
-    val list1 = List(2,4,234,3)
-    println("list1" + list1)
-    var list1_1 = list1.::(3)
-    println("list1_1" + list1_1)
-
-
-    val list2 = 2 :: (4 :: Nil)
-    val list3 = 54 :: (89 :: Nil)
-    println("list2" + list2)
-    println("list3" + list3)
-
-    val list4 = list2 ::: list3
-    val list5 = list3.:::(list3)
-    println("list4" + list4)
-    println("list5" + list5)
-
-
-
-
-  }
 
 
   def main(args: Array[String]): Unit = {
-    listTest()
 
   }
 
