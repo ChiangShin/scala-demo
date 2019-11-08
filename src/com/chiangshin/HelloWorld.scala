@@ -1,10 +1,15 @@
 package com.chiangshin
 
 import java.util.Date
+
+import com.chiangshin.bao.{Location, PointTest}
+
 import Array._
 
 object HelloWorld {
-
+  def test1{
+    print("ffff")
+  }
   def forTest1() = {
     for(t <-  1 to 10;s <- 1 to t){
       print(t + "*" + s + "=" + (t*s) +" ")
@@ -175,6 +180,9 @@ object HelloWorld {
 
 
   def main(args: Array[String]): Unit = {
+    val pattern = "\\d".r
+    val str = "juhsu1938234jsidj"
+    print(pattern.findFirstIn( str))
 
   }
 
