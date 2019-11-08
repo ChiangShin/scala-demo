@@ -44,6 +44,8 @@ object ListTest {
     val distinct = site2.distinct
     println(s"distinct = ${distinct}")
 
+    val list1 = List(34,"fds")
+    println(s"list1 = ${list1}")
   }
 
 }

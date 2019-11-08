@@ -19,5 +19,7 @@ object MapDemo {
     
     val map1 = map - "f"
     println(s"map1 = ${map1}")
+    println(map1.get("f").getOrElse(99999))
+    println(s"map1.get('f') = ${map1.get("f")}")
   }
 }
